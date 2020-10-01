@@ -3,12 +3,11 @@
 trap_ctrlc()
 {  
   # perform cleanup here
-  echo "Ctrl-C caught...performing clean up"
+  echo "Ctrl-C caught...performing shut down"
 
-  cd "src/indy-material/nodejs"
   docker-compose down
   
-  echo "Doing cleanup"
+  echo "Done"
 
   # exit shell script with error code 2
   # if omitted, shell script will continue execution
@@ -21,12 +20,12 @@ trap "trap_ctrlc" 2
 
 clear
 echo "Running Up Container with Wallets:"
-echo "------*------*----------------------------------------"
-echo "Alice : 3005 | https://alice.wallet.drom.beta.de.com"
-echo "Bob   : 3001 | https://bob.wallet.drom.beta.de.com"
-echo "Faber : 3002 | https://faber.wallet.drom.beta.de.com"
-echo "Acme  : 3003 | https://acme.wallet.drom.beta.de.com"
-echo "Bank  : 3004 | https://bank.wallet.drom.beta.de.com"
-echo "------*------*----------------------------------------"
+echo "-------*------*----------------------------------------"
+echo " Alice : 3005 | https://alice.wallet.drom.beta.de.com"
+echo " Bob   : 3001 | https://bob.wallet.drom.beta.de.com"
+echo " Faber : 3002 | https://faber.wallet.drom.beta.de.com"
+echo " Acme  : 3003 | https://acme.wallet.drom.beta.de.com"
+echo " Bank  : 3004 | https://bank.wallet.drom.beta.de.com"
+echo "-------*------*----------------------------------------"
 cd "src/indy-material/nodejs"
 docker-compose up -d
