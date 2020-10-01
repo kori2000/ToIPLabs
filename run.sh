@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 echo "Building DID Demo..."
-cd /src/indy-material/nodejs
+cd "src/indy-material/nodejs"
 sh ./manage build
 echo "Done."
 echo "Running Container:"
