@@ -257,6 +257,34 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
+  drom:
+    image: indy-agentjs
+    command: "bash -c 'sleep 10; npm start'"
+    environment:
+      - ICON_SRC=http://www.psdgraphics.com/file/bank-building-icon.jpg
+      - THEME=Coral
+      - PORT=3006
+      - NAME=Team DRON
+      - EMAIL=drom@deutschebahn.com
+      - PASSWORD=123
+      - USERNAME=drom
+      - PUBLIC_DID_ENDPOINT=173.17.0.191:3004
+      - RUST_LOG=${RUST_LOG}
+      - TEST_POOL_IP=${TEST_POOL_IP}
+    ports:
+      - 3004:3004
+    depends_on:
+      - node1
+      - node2
+      - node3
+      - node4
+      - alice
+    networks:
+      services:
+        ipv4_address: 173.17.0.191
+    volumes:
+      - node1-data:/home/indy/ledger
+
 volumes:
   webserver-cli:
   node1-data:
