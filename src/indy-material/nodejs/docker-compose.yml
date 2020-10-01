@@ -268,11 +268,11 @@ services:
       - EMAIL=drom@deutschebahn.com
       - PASSWORD=123
       - USERNAME=drom
-      - PUBLIC_DID_ENDPOINT=173.17.0.191:3004
+      - PUBLIC_DID_ENDPOINT=173.17.0.191:3006
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
     ports:
-      - 3004:3004
+      - 3006:3006
     depends_on:
       - node1
       - node2
