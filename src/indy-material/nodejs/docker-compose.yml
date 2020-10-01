@@ -120,7 +120,7 @@ services:
       - THEME=DarkGray
       - PORT=3005
       - NAME=Asset
-      - EMAIL=drom@deutschebahn.com
+      - EMAIL=asset@DROM
       - TAX_ID=999-50-3005
       - PASSWORD=2020
       - USERNAME=asset
@@ -148,7 +148,7 @@ services:
       - THEME=BurlyWood
       - PORT=3001
       - NAME=Roland
-      - EMAIL=drom@deutschebahn.com
+      - EMAIL=roland@DROM
       - TAX_ID=999-50-3001
       - PASSWORD=2020
       - USERNAME=roland
@@ -177,7 +177,7 @@ services:
       - THEME=OliveDrab
       - PORT=3002
       - NAME=Marta
-      - EMAIL=drom@deutschebahn.com
+      - EMAIL=marta@DROM
       - TAX_ID=999-50-3002
       - PASSWORD=2020
       - USERNAME=marta
@@ -206,7 +206,7 @@ services:
       - THEME=LightSteelBlue
       - PORT=3003
       - NAME=Luisa
-      - EMAIL=drom@deutschebahn.com
+      - EMAIL=luisa@DROM
       - TAX_ID=999-50-3003
       - PASSWORD=2020
       - USERNAME=luisa
@@ -235,7 +235,7 @@ services:
       - THEME=Coral
       - PORT=3004
       - NAME=Andrei
-      - EMAIL=drom@deutschebahn.com
+      - EMAIL=andrei@DROM
       - TAX_ID=999-50-3004
       - PASSWORD=2020
       - USERNAME=andrei
@@ -264,7 +264,7 @@ services:
       - THEME=OliveDrab
       - PORT=3006
       - NAME=Cemil
-      - EMAIL=drom@deutschebahn.com
+      - EMAIL=cemil@DROM
       - TAX_ID=999-50-3006
       - PASSWORD=2020
       - USERNAME=cemil
@@ -293,7 +293,7 @@ services:
       - THEME=OliveDrab
       - PORT=3007
       - NAME=Koraltan
-      - EMAIL=drom@deutschebahn.com
+      - EMAIL=koraltan@DROM
       - TAX_ID=999-50-3007
       - PASSWORD=2020
       - USERNAME=koraltan
