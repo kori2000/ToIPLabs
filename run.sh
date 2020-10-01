@@ -1,7 +1,8 @@
 #!/bin/bash
 clear
 echo "Building DID Demo..."
-sh /src/indy-material/nodejs/manage build
+cd /src/indy-material/nodejs
+sh ./manage build
 echo "Done."
 echo "Running Container:"
 echo "------*--------------------"
@@ -11,4 +12,4 @@ echo "Faber : PORT = 3002 "
 echo "Acme  : PORT = 3003 "
 echo "Bank  : PORT = 3004 "
 echo "------*--------------------"
-sh /src/indy-material/nodejs/manage up
+sh ./manage up
