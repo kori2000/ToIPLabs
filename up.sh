@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-function trap_ctrlc ()
+function trap_ctrlc
 {  
   # perform cleanup here
   echo "Ctrl-C caught...performing clean up"
