@@ -9,4 +9,5 @@ echo "Acme  : PORT = 3003 "
 echo "Bank  : PORT = 3004 "
 echo "------*--------------------"
 cd "src/indy-material/nodejs"
+docker-compose down
 sh ./manage up
