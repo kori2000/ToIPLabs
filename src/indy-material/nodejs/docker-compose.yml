@@ -122,16 +122,16 @@ services:
     environment:
       - ICON_SRC=https://maxcdn.icons8.com/Share/icon/Users/person_female1600.png
       - THEME=DarkGray
-      - PORT=3000
+      - PORT=3005
       - NAME=Alice
       - EMAIL=alice@faber.edu
       - PASSWORD=123
       - USERNAME=alice
-      - PUBLIC_DID_ENDPOINT=173.17.0.150:3000
+      - PUBLIC_DID_ENDPOINT=173.17.0.150:3005
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
     ports:
-      - 3000:3000
+      - 3005:3005
     depends_on:
       - node1
       - node2
