@@ -1,16 +1,17 @@
-#!/bin/bash
+#!/bin/sh
 
-function trap_ctrlc () {
-    # perform cleanup here
-    echo "Ctrl-C caught...performing clean up"
-    cd "src/indy-material/nodejs"
-    docker-compose down
- 
-    echo "Doing cleanup"
- 
-    # exit shell script with error code 2
-    # if omitted, shell script will continue execution
-    exit 2
+function trap_ctrlc () {  
+  # perform cleanup here
+  echo "Ctrl-C caught...performing clean up"
+
+  cd "src/indy-material/nodejs"
+  docker-compose down
+  
+  echo "Doing cleanup"
+
+  # exit shell script with error code 2
+  # if omitted, shell script will continue execution
+  exit 2
 }
 
 # initialise trap to call trap_ctrlc function
