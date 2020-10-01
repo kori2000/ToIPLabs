@@ -54,7 +54,6 @@ services:
     environment:
       - IP=173.17.0.101
       - IPS=173.17.0.101,173.17.0.102,173.17.0.103,173.17.0.104
-#      - HOST=173.17.0.101
       - RUST_LOG=${RUST_LOG}
     volumes:
       - node1-data:/home/indy/ledger
@@ -72,7 +71,6 @@ services:
       - IP=173.17.0.101
       - IPS=173.17.0.101,173.17.0.102,173.17.0.103,173.17.0.104
       - RUST_LOG=${RUST_LOG}
-#      - HOST=173.17.0.102
     volumes:
       - node2-data:/home/indy/ledger
 
@@ -88,7 +86,6 @@ services:
     environment:
       - IP=173.17.0.101
       - IPS=173.17.0.101,173.17.0.102,173.17.0.103,173.17.0.104
-#      - HOST=173.17.0.103
       - RUST_LOG=${RUST_LOG}
     volumes:
       - node3-data:/home/indy/ledger
@@ -105,7 +102,6 @@ services:
     environment:
       - IP=173.17.0.101
       - IPS=173.17.0.101,173.17.0.102,173.17.0.103,173.17.0.104
-#      - HOST=173.17.0.104
       - RUST_LOG=${RUST_LOG}
     volumes:
       - node4-data:/home/indy/ledger
@@ -113,20 +109,21 @@ services:
   #
   # Agents
   #
-  alice:
+  asset:
     image: indy-agentjs
     build:
       context: .
       dockerfile: agent.dockerfile
     command: "bash -c 'sleep 10; npm start'"
     environment:
-      - ICON_SRC=https://maxcdn.icons8.com/Share/icon/Users/person_female1600.png
+      - ICON_SRC=https://www.psdgraphics.com/wp-content/uploads/2019/12/christmas-squares-pattern-seamless.png
       - THEME=DarkGray
       - PORT=3005
-      - NAME=Alice
-      - EMAIL=alice@faber.edu
-      - PASSWORD=123
-      - USERNAME=alice
+      - NAME=Asset
+      - EMAIL=drom@deutschebahn.com
+      - TAX_ID=999-50-3005
+      - PASSWORD=2020
+      - USERNAME=asset
       - PUBLIC_DID_ENDPOINT=173.17.0.150:3005
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
@@ -143,19 +140,18 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  #
-  #
-  bob:
+  roland:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
-      - ICON_SRC=http://www.clker.com/cliparts/g/l/R/7/h/u/teamstijl-person-icon-blue-hi.png
+      - ICON_SRC=https://www.psdgraphics.com/wp-content/uploads/2019/02/fresh-spring-colors-pattern.png
       - THEME=BurlyWood
       - PORT=3001
-      - NAME=Bob
-      - EMAIL=bob@byu.edu
-      - PASSWORD=123
-      - USERNAME=bob
+      - NAME=Roland
+      - EMAIL=drom@deutschebahn.com
+      - TAX_ID=999-50-3001
+      - PASSWORD=2020
+      - USERNAME=roland
       - PUBLIC_DID_ENDPOINT=173.17.0.160:3001
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
@@ -166,24 +162,25 @@ services:
       - node2
       - node3
       - node4
-      - alice
+      - asset
     networks:
       services:
         ipv4_address: 173.17.0.160
     volumes:
       - node1-data:/home/indy/ledger
 
-  faber:
+  marta:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
-      - ICON_SRC=https://cdn2.iconfinder.com/data/icons/bubble-education-icons-1/360/School-512.png
+      - ICON_SRC=https://www.psdgraphics.com/wp-content/uploads/2019/10/squares-pattern.png
       - THEME=OliveDrab
       - PORT=3002
-      - NAME=Faber College
-      - EMAIL=admin@faber.edu
-      - PASSWORD=123
-      - USERNAME=faber
+      - NAME=Marta
+      - EMAIL=drom@deutschebahn.com
+      - TAX_ID=999-50-3002
+      - PASSWORD=2020
+      - USERNAME=marta
       - PUBLIC_DID_ENDPOINT=173.17.0.170:3002
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
@@ -194,24 +191,25 @@ services:
       - node2
       - node3
       - node4
-      - alice
+      - asset
     networks:
       services:
         ipv4_address: 173.17.0.170
     volumes:
       - node1-data:/home/indy/ledger
 
-  acme:
+  luisa:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
-      - ICON_SRC=https://i.ytimg.com/vi/JUMufld7UcY/maxresdefault.jpg
+      - ICON_SRC=https://www.psdgraphics.com/wp-content/uploads/2020/02/dotted-fruits-pattern.png
       - THEME=LightSteelBlue
       - PORT=3003
-      - NAME=Acme Corporation
-      - EMAIL=boss@acme.com
-      - PASSWORD=123
-      - USERNAME=acme
+      - NAME=Luisa
+      - EMAIL=drom@deutschebahn.com
+      - TAX_ID=999-50-3003
+      - PASSWORD=2020
+      - USERNAME=luisa
       - PUBLIC_DID_ENDPOINT=173.17.0.180:3003
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
@@ -222,24 +220,25 @@ services:
       - node2
       - node3
       - node4
-      - alice
+      - asset
     networks:
       services:
         ipv4_address: 173.17.0.180
     volumes:
       - node1-data:/home/indy/ledger
 
-  thrift:
+  andrei:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
-      - ICON_SRC=http://www.psdgraphics.com/file/bank-building-icon.jpg
+      - ICON_SRC=https://www.psdgraphics.com/wp-content/uploads/2020/06/honeycomb-pattern.png
       - THEME=Coral
       - PORT=3004
-      - NAME=Thrift Bank
-      - EMAIL=owner@thrift.com
-      - PASSWORD=123
-      - USERNAME=thrift
+      - NAME=Andrei
+      - EMAIL=drom@deutschebahn.com
+      - TAX_ID=999-50-3004
+      - PASSWORD=2020
+      - USERNAME=andrei
       - PUBLIC_DID_ENDPOINT=173.17.0.190:3004
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
@@ -250,24 +249,25 @@ services:
       - node2
       - node3
       - node4
-      - alice
+      - asset
     networks:
       services:
         ipv4_address: 173.17.0.190
     volumes:
       - node1-data:/home/indy/ledger
 
-  drom:
+  cemil:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
-      - ICON_SRC=http://www.psdgraphics.com/file/bank-building-icon.jpg
-      - THEME=Coral
+      - ICON_SRC=https://www.psdgraphics.com/wp-content/uploads/2020/07/yellow-pink-sunny-halftone-pattern-768x512.jpg
+      - THEME=OliveDrab
       - PORT=3006
-      - NAME=Team DRON
+      - NAME=Cemil
       - EMAIL=drom@deutschebahn.com
-      - PASSWORD=123
-      - USERNAME=drom
+      - TAX_ID=999-50-3006
+      - PASSWORD=2020
+      - USERNAME=cemil
       - PUBLIC_DID_ENDPOINT=173.17.0.191:3006
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
@@ -278,10 +278,39 @@ services:
       - node2
       - node3
       - node4
-      - alice
+      - asset
     networks:
       services:
         ipv4_address: 173.17.0.191
+    volumes:
+      - node1-data:/home/indy/ledger
+
+  koraltan:
+    image: indy-agentjs
+    command: "bash -c 'sleep 10; npm start'"
+    environment:
+      - ICON_SRC=https://www.psdgraphics.com/wp-content/uploads/2020/07/retro-brown-hexagons-pattern-768x512.jpg
+      - THEME=OliveDrab
+      - PORT=3007
+      - NAME=Koraltan
+      - EMAIL=drom@deutschebahn.com
+      - TAX_ID=999-50-3007
+      - PASSWORD=2020
+      - USERNAME=koraltan
+      - PUBLIC_DID_ENDPOINT=173.17.0.181:3007
+      - RUST_LOG=${RUST_LOG}
+      - TEST_POOL_IP=${TEST_POOL_IP}
+    ports:
+      - 3007:3007
+    depends_on:
+      - node1
+      - node2
+      - node3
+      - node4
+      - asset
+    networks:
+      services:
+        ipv4_address: 173.17.0.181
     volumes:
       - node1-data:/home/indy/ledger
 
