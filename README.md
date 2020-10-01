@@ -9,16 +9,17 @@ First run (will run up after building)
 $ sh run.sh
 ```
 
-Up
+Up // Down
 ```bash
 $ sh up.sh
+$ sh down.sh
 ```
 
 ## Web Agents Running on ports:
 
 ```python
 "------*--------------------"
-"Alice : PORT = 3000 "
+"Alice : PORT = 3005 "
 "Bob   : PORT = 3001 "
 "Faber : PORT = 3002 "
 "Acme  : PORT = 3003 "
