@@ -18,7 +18,7 @@ function trap_ctrlc () {
 trap "trap_ctrlc" 2
 
 clear
-echo "Running Container with Wallets:"
+echo "Running Up Container with Wallets:"
 echo "------*------*----------------------------------------"
 echo "Alice : 3005 | https://alice.wallet.drom.beta.de.com"
 echo "Bob   : 3001 | https://bob.wallet.drom.beta.de.com"

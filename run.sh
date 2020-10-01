@@ -4,7 +4,7 @@ echo "Building DID Demo..."
 cd "src/indy-material/nodejs"
 sh ./manage build
 echo "Done."
-echo "Running Container with Wallets:"
+echo "Running Up Container with Wallets:"
 echo "------*------*----------------------------------------"
 echo "Alice : 3005 | https://alice.wallet.drom.beta.de.com"
 echo "Bob   : 3001 | https://bob.wallet.drom.beta.de.com"
